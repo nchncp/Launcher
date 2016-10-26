@@ -17,6 +17,11 @@ public class MessagesActivity extends Activity {
 
     }
 
+    public void showSendMessage(View v){
+        Intent i = new Intent(this, MessagesSend.class);
+        startActivity(i);
+    }
+
     public void showUnreadMessages(View v) {
         Intent i = new Intent(this, MessagesUnread.class);
         startActivity(i);

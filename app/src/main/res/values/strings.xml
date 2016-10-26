@@ -10,8 +10,8 @@
     <string name="sms_send">SEND MESSAGE</string>
     <string name="sms_unread">UNREAD MESSAGES</string>
     <string name="sms_read">READ MESSAGES</string>
-    <string name="sms_title">Title</string>
-    <string name="sms_detail">asdfghjkl;asdfghjkl;</string>
+    <string name="sms_title">Title : </string>
+    <string name="sms_detail">Message : </string>
     <string name="galleryBox">GALLERY</string>
     <string name="login">LOGIN</string>
     <string name="username">Username</string>
@@ -33,4 +33,8 @@
     <string name="save">SAVE</string>
     <string name="register">Register</string>
     <string name="cancel">CANCEL</string>
+    <string name="title">Title</string>
+    <string name="message">Message</string>
+    <string name="to">Username</string>
+    <string name="sms_to">To :</string>
 </resources>

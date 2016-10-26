@@ -48,6 +48,11 @@
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 
         <activity
+            android:name=".MessagesSend"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <activity
             android:name=".MessagesUnread"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
