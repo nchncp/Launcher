@@ -61,6 +61,7 @@ public class ContactBookAdapter extends BaseAdapter {
 
         TextView tvEmail = (TextView)arg1.findViewById(R.id.tvEmail);
         tvEmail.setText(entry.getmEmail());
+
         return arg1;
     }
 

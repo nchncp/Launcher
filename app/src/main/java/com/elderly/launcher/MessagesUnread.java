@@ -62,11 +62,12 @@ public class MessagesUnread extends Activity {
         call.enqueue(new Callback<List<MessagesModel>>() {
             @Override
             public void onResponse(Call<List<MessagesModel>> call, Response<List<MessagesModel>> response) {
-                ArrayList<String> exData = new ArrayList<String>();
-                for(MessagesModel obj: response.body()) {
-                    exData.add(obj.getTopic());
+                ArrayList<MessagesModel> exData = new ArrayList<MessagesModel>();
+                for (MessagesModel obj : response.body()) {
+                    exData.add(new MessagesModel(obj.getTopic(), obj.getMessage(), obj.getTimeSend(), obj.getDateSend()));
                 }
-                ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(MessagesUnread.this, android.R.layout.simple_list_item_1, android.R.id.text1, exData);
+
+                MessagesAdapter myAdapter = new MessagesAdapter(MessagesUnread.this, exData);
                 jsonListview.setAdapter(myAdapter);
             }
 

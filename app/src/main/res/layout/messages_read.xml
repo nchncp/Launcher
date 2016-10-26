@@ -20,7 +20,7 @@
 
 
     <TableLayout
-        android:layout_below="@+id/messagesBox"
+        android:layout_below="@id/messagesBox"
         android:id="@+id/tableContact"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -27,8 +27,6 @@ import retrofit2.http.Query;
 public class MessagesRead extends Activity {
     private ListView jsonListview;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,11 +59,12 @@ public class MessagesRead extends Activity {
         call.enqueue(new Callback<List<MessagesModel>>() {
             @Override
             public void onResponse(Call<List<MessagesModel>> call, Response<List<MessagesModel>> response) {
-                ArrayList<String> exData = new ArrayList<String>();
+                ArrayList<MessagesModel> exData = new ArrayList<MessagesModel>();
                 for (MessagesModel obj : response.body()) {
-                    exData.add(obj.getTopic());
+                    exData.add(new MessagesModel(obj.getTopic(), obj.getMessage(), obj.getTimeSend(), obj.getDateSend()));
                 }
-                ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(MessagesRead.this, android.R.layout.simple_list_item_1, android.R.id.text1, exData);
+
+                MessagesAdapter myAdapter = new MessagesAdapter(MessagesRead.this, exData);
                 jsonListview.setAdapter(myAdapter);
             }
 
