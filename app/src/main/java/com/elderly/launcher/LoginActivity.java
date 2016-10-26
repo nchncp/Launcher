@@ -77,6 +77,7 @@ public class LoginActivity extends Activity {
                 String strAccountID = "0";
                 String strError = "Unknow Status!";
 
+                String strUsername = "";
                 String strFName = "";
                 String strLName = "";
 
@@ -87,6 +88,7 @@ public class LoginActivity extends Activity {
                     strAccountID = c.getString("AccountID");
                     strError = c.getString("Error");
 
+                    strUsername = c.getString("Username");
                     strFName = c.getString("FName");
                     strLName = c.getString("LName");
 
@@ -108,6 +110,7 @@ public class LoginActivity extends Activity {
                     SharedPreferences sharedPreferences = getSharedPreferences("PREF_NAME", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("AccountID", strAccountID);
+                    editor.putString("Username",strUsername);
                     editor.putString("FName", strFName);
                     editor.putString("LName", strLName);
                     editor.commit();
@@ -115,6 +118,7 @@ public class LoginActivity extends Activity {
                     Toast.makeText(LoginActivity.this, "Login OK", Toast.LENGTH_SHORT).show();
                     Intent newActivity = new Intent(LoginActivity.this, HomeActivity.class);
                     newActivity.putExtra("AccountID", strAccountID);
+                    newActivity.putExtra("Username", strUsername);
                     startActivity(newActivity);
                 }
 

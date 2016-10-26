@@ -27,7 +27,7 @@
             android:textStyle="bold" />
 
         <LinearLayout
-            android:id="@+id/messageFeild"
+            android:id="@+id/box"
             android:layout_below="@+id/messageSend"
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -70,7 +70,7 @@
                     android:textColor="#212121" />
 
                 <EditText
-                    android:id="@+id/title"
+                    android:id="@+id/messageTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="50dp"
@@ -93,7 +93,7 @@
                     android:textColor="#212121" />
 
                 <EditText
-                    android:id="@+id/message"
+                    android:id="@+id/messageField"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:inputType="textMultiLine"
@@ -110,7 +110,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_below="@+id/messageFeild"
+            android:layout_below="@+id/box"
             android:layout_centerInParent="true"
             android:gravity="center">
 
@@ -119,15 +119,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/save"/>
+                android:text="@string/send"/>
 
             <Button
                 android:id="@+id/btnCancel"
-                android:layout_toEndOf="@+id/btnSend"
+                android:layout_toEndOf="@id/btnSend"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:onClick="showRegister"
+                android:onClick="showMessages"
                 android:text="@string/cancel"/>
 
         </LinearLayout>
