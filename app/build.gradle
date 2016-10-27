@@ -6,7 +6,7 @@ android {
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
-        applicationId "com.example.elderly.simplelauncher"
+        applicationId "com.elderly.launcher"
         minSdkVersion 19
         targetSdkVersion 24
         versionCode 1
@@ -30,4 +30,6 @@ dependencies {
     compile 'com.devbrackets.android:exomedia:3.0.2'
     compile 'com.squareup.picasso:picasso:2.3.2'
     compile 'com.mcxiaoke.volley:library:1.0.18'
+    compile 'com.google.firebase:firebase-messaging:9.6.1'
 }
+apply plugin: 'com.google.gms.google-services'

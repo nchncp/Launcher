@@ -19,6 +19,8 @@ import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.firebase.iid.FirebaseInstanceId;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -64,13 +66,30 @@ public class HomeActivity extends Activity {
     private TextView notiDetail;
     private ArrayList<String> notiData;
 
+    private static final String TAG = "HomeActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        notiTopic = (TextView)findViewById(R.id.noti_title);
-        notiDetail = (TextView)findViewById(R.id.noti_detail);
+        if (getIntent().getExtras() != null) {
+            for (String key : getIntent().getExtras().keySet()) {
+                String value = getIntent().getExtras().getString(key);
+                Log.d(TAG, "Key: " + key + " Value: " + value);
+            }
+        }
+
+        Button logTokenButton = (Button) findViewById(R.id.btnFirebase);
+        logTokenButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "InstanceID token: " + FirebaseInstanceId.getInstance().getToken());
+            }
+        });
+
+//        notiTopic = (TextView)findViewById(R.id.noti_title);
+//        notiDetail = (TextView)findViewById(R.id.noti_detail);
 
         //popupWindow();
 
